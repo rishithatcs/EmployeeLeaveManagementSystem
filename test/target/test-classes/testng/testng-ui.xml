@@ -1,0 +1,51 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<!--
+  ================================================================
+  ELMS UI-Only Test Suite
+  Runs all Selenium / TestNG UI tests (browser must be available).
+  Usage: mvn test -P ui-tests
+  ================================================================
+-->
+<suite name="ELMS UI Test Suite" verbose="1" parallel="none">
+
+  <listeners>
+    <listener class-name="com.elsm.automation.utils.TestListener"/>
+  </listeners>
+
+  <test name="Login UI Tests">
+    <classes>
+      <class name="com.elsm.automation.ui.tests.LoginUiTest"/>
+    </classes>
+  </test>
+
+  <test name="Register UI Tests">
+    <classes>
+      <class name="com.elsm.automation.ui.tests.RegisterUiTest"/>
+    </classes>
+  </test>
+
+  <test name="Dashboard UI Tests">
+    <classes>
+      <class name="com.elsm.automation.ui.tests.DashboardUiTest"/>
+    </classes>
+  </test>
+
+  <test name="Leave Requests UI Tests">
+    <classes>
+      <class name="com.elsm.automation.ui.tests.LeaveRequestsUiTest"/>
+    </classes>
+  </test>
+
+  <test name="Manager Dashboard UI Tests">
+    <classes>
+      <class name="com.elsm.automation.ui.tests.ManagerDashboardUiTest"/>
+    </classes>
+  </test>
+
+  <test name="Admin Dashboard UI Tests">
+    <classes>
+      <class name="com.elsm.automation.ui.tests.AdminDashboardUiTest"/>
+    </classes>
+  </test>
+
+</suite>

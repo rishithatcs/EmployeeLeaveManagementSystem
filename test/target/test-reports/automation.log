@@ -1,0 +1,1025 @@
+2026-02-26 14:21:55.558 [main] INFO  com.elsm.automation.config.ConfigReader - Configuration loaded from config/config.properties
+2026-02-26 14:21:56.459 [main] INFO  com.elsm.automation.config.BaseApiTest - REST Assured base URI set to: http://localhost:8080/api
+2026-02-26 14:21:56.460 [main] INFO  com.elsm.automation.utils.ApiUtils - POST /auth/login  email=employee@test.com
+2026-02-26 14:21:58.087 [main] INFO  com.elsm.automation.utils.TestListener - ======= TEST SUITE STARTED: Auth API Tests =======
+2026-02-26 14:21:58.120 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-AUTH-08: JWT response body contains all required fields (token, id, name, email, roles)
+2026-02-26 14:21:58.335 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testLoginResponseContainsRequiredFields
+2026-02-26 14:21:58.347 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-AUTH-13: Content-Type of login response is application/json
+2026-02-26 14:21:58.349 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testLoginResponseContentType
+2026-02-26 14:21:58.350 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-AUTH-06: Login with blank email returns error response
+2026-02-26 14:21:58.351 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testLoginWithBlankEmail
+2026-02-26 14:21:58.352 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-AUTH-07: Login with blank password returns error response
+2026-02-26 14:21:58.353 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testLoginWithBlankPassword
+2026-02-26 14:21:58.355 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-AUTH-04: Login with invalid password returns 401 Unauthorized
+2026-02-26 14:21:58.356 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testLoginWithInvalidPassword
+2026-02-26 14:21:58.357 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-AUTH-05: Login with non-existent email returns 401 Unauthorized
+2026-02-26 14:21:58.358 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testLoginWithNonExistentEmail
+2026-02-26 14:21:58.359 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-AUTH-03: Successful login with valid admin credentials returns JWT token
+2026-02-26 14:21:58.360 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testLoginWithValidAdminCredentials
+2026-02-26 14:21:58.362 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-AUTH-01: Successful login with valid employee credentials returns JWT token
+2026-02-26 14:21:58.363 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testLoginWithValidEmployeeCredentials
+2026-02-26 14:21:58.364 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-AUTH-02: Successful login with valid manager credentials returns JWT token
+2026-02-26 14:21:58.364 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testLoginWithValidManagerCredentials
+2026-02-26 14:21:58.366 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-AUTH-12: /register endpoint behaves identically to /signup
+2026-02-26 14:21:58.367 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testRegisterEndpointBehavesLikeSignup
+2026-02-26 14:21:58.369 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-AUTH-11: Signup with a duplicate email returns a non-2xx error
+2026-02-26 14:21:58.369 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testSignupWithDuplicateEmail
+2026-02-26 14:21:58.371 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-AUTH-09: Signup with valid employee data returns 200 and user DTO
+2026-02-26 14:21:58.372 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testSignupWithValidEmployeeData
+2026-02-26 14:21:58.374 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-AUTH-10: Signup with valid manager data returns 200 with MANAGER role
+2026-02-26 14:21:58.374 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testSignupWithValidManagerData
+2026-02-26 14:21:58.378 [main] INFO  com.elsm.automation.utils.TestListener - ======= TEST SUITE FINISHED: Auth API Tests =======
+2026-02-26 14:21:58.785 [main] INFO  com.elsm.automation.utils.TestListener - ======= TEST SUITE STARTED: Employee API Tests =======
+2026-02-26 14:21:58.790 [main] INFO  com.elsm.automation.utils.ApiUtils - POST /auth/login  email=employee@test.com
+2026-02-26 14:21:58.938 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-EMP-14: Cancelling a non-existent leave request returns 4xx
+2026-02-26 14:21:58.939 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testCancelLeaveRequest_NonExistentId_ReturnsError
+2026-02-26 14:21:58.940 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-EMP-01: Employee can fetch their leave balance (200 with list)
+2026-02-26 14:21:58.940 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testGetLeaveBalance_ReturnsOk
+2026-02-26 14:21:58.941 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-EMP-04: Manager token cannot access employee leave-balance (403)
+2026-02-26 14:21:58.942 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testGetLeaveBalance_WithManagerToken_ReturnsForbidden
+2026-02-26 14:21:58.943 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-EMP-03: Accessing leave-balance without a token returns 401/403
+2026-02-26 14:21:58.943 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testGetLeaveBalance_WithoutToken_ReturnsForbidden
+2026-02-26 14:21:58.944 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-EMP-02: Leave balance response contains leaveType and balance fields
+2026-02-26 14:21:58.945 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testLeaveBalanceContainsRequiredFields
+2026-02-26 14:21:58.946 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-EMP-09: Submitting leave request without startDate returns 400
+2026-02-26 14:21:58.946 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testSubmitLeaveRequest_MissingStartDate_ReturnsBadRequest
+2026-02-26 14:21:58.947 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-EMP-07: Employee can submit a valid leave request (200)
+2026-02-26 14:21:58.948 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testSubmitLeaveRequest_Valid
+2026-02-26 14:21:58.949 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-EMP-11: Submitting leave request without token returns 401/403
+2026-02-26 14:21:58.949 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testSubmitLeaveRequest_WithoutToken_ReturnsForbidden
+2026-02-26 14:21:58.950 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-EMP-05: Employee can fetch their leave history (200)
+2026-02-26 14:21:58.951 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testGetLeaveHistory_ReturnsOk
+2026-02-26 14:21:58.952 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-EMP-06: Leave history items contain id, leaveType, status, startDate, endDate
+2026-02-26 14:21:58.953 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testLeaveHistoryContainsRequiredFields
+2026-02-26 14:21:58.955 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-EMP-10: Submitting leave request without endDate returns 400
+2026-02-26 14:21:58.956 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testSubmitLeaveRequest_MissingEndDate_ReturnsBadRequest
+2026-02-26 14:21:58.957 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-EMP-08: Submitting leave request without leaveType returns 400
+2026-02-26 14:21:58.957 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testSubmitLeaveRequest_MissingLeaveType_ReturnsBadRequest
+2026-02-26 14:21:58.960 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-EMP-12: Employee can modify a PENDING leave request (200)
+2026-02-26 14:21:58.961 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testModifyLeaveRequest_Valid
+2026-02-26 14:21:58.962 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-EMP-13: Employee can cancel a PENDING leave request (200)
+2026-02-26 14:21:58.971 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testCancelLeaveRequest_Valid
+2026-02-26 14:21:58.972 [main] INFO  com.elsm.automation.utils.TestListener - ======= TEST SUITE FINISHED: Employee API Tests =======
+2026-02-26 14:21:59.016 [main] INFO  com.elsm.automation.utils.TestListener - ======= TEST SUITE STARTED: Manager API Tests =======
+2026-02-26 14:21:59.018 [main] INFO  com.elsm.automation.utils.ApiUtils - POST /auth/login  email=manager@test.com
+2026-02-26 14:21:59.165 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-MGR-05: Manager can approve a pending leave request (200)
+2026-02-26 14:21:59.165 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testApproveLeaveRequest_Valid
+2026-02-26 14:21:59.166 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-MGR-07: Deciding on a non-existent leave request returns 4xx
+2026-02-26 14:21:59.167 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testDecideLeave_NonExistentId_ReturnsError
+2026-02-26 14:21:59.168 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-MGR-08: Employee token cannot approve/reject leaves (403)
+2026-02-26 14:21:59.168 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testDecideLeave_WithEmployeeToken_ReturnsForbidden
+2026-02-26 14:21:59.169 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-MGR-01: Manager can retrieve pending leave requests (200)
+2026-02-26 14:21:59.169 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testGetPendingRequests_ReturnsOk
+2026-02-26 14:21:59.170 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-MGR-04: Employee token cannot access manager pending-requests (403)
+2026-02-26 14:21:59.171 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testGetPendingRequests_WithEmployeeToken_ReturnsForbidden
+2026-02-26 14:21:59.172 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-MGR-03: Accessing pending-requests without token returns 401/403
+2026-02-26 14:21:59.173 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testGetPendingRequests_WithoutToken_ReturnsForbidden
+2026-02-26 14:21:59.173 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-MGR-11: Manager can retrieve team leave history (200)
+2026-02-26 14:21:59.174 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testGetTeamHistory_ReturnsOk
+2026-02-26 14:21:59.175 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-MGR-12: Admin token cannot access manager-only team-history (403)
+2026-02-26 14:21:59.175 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testGetTeamHistory_WithAdminToken_ReturnsForbidden
+2026-02-26 14:21:59.176 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-MGR-09: Manager can retrieve team leave status (200)
+2026-02-26 14:21:59.177 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testGetTeamLeaves_ReturnsOk
+2026-02-26 14:21:59.178 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-MGR-10: Employee token cannot access team-leaves (403)
+2026-02-26 14:21:59.179 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testGetTeamLeaves_WithEmployeeToken_ReturnsForbidden
+2026-02-26 14:21:59.180 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-MGR-02: Pending requests list items contain required fields
+2026-02-26 14:21:59.184 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testPendingRequestsContainRequiredFields
+2026-02-26 14:21:59.186 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-MGR-06: Manager can reject a leave request (200)
+2026-02-26 14:21:59.186 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testRejectLeaveRequest_Valid
+2026-02-26 14:21:59.187 [main] INFO  com.elsm.automation.utils.TestListener - ======= TEST SUITE FINISHED: Manager API Tests =======
+2026-02-26 14:21:59.223 [main] INFO  com.elsm.automation.utils.TestListener - ======= TEST SUITE STARTED: Admin API Tests =======
+2026-02-26 14:21:59.227 [main] INFO  com.elsm.automation.utils.ApiUtils - POST /auth/login  email=admin@test.com
+2026-02-26 14:21:59.382 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-ADM-09: Adjusting balance for non-existent user returns 400
+2026-02-26 14:21:59.382 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testAdjustLeaveBalance_NonExistentUser_ReturnsBadRequest
+2026-02-26 14:21:59.383 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-ADM-08: Admin can adjust leave balance for an employee (200)
+2026-02-26 14:21:59.384 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testAdjustLeaveBalance_Valid
+2026-02-26 14:21:59.385 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-ADM-10: Employee token cannot adjust leave balance (403)
+2026-02-26 14:21:59.385 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testAdjustLeaveBalance_WithEmployeeToken_ReturnsForbidden
+2026-02-26 14:21:59.386 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-ADM-15: All admin endpoints reject unauthenticated requests
+2026-02-26 14:21:59.386 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testAdminEndpoints_WithoutToken_ReturnsForbidden
+2026-02-26 14:21:59.387 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-ADM-01: Admin can assign a role to a user (200)
+2026-02-26 14:21:59.388 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testAssignRole_Valid
+2026-02-26 14:21:59.389 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-ADM-02: Employee token cannot assign roles (403)
+2026-02-26 14:21:59.390 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testAssignRole_WithEmployeeToken_ReturnsForbidden
+2026-02-26 14:21:59.391 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-ADM-13: Admin can generate a leave report (200)
+2026-02-26 14:21:59.391 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testGenerateReport_Valid
+2026-02-26 14:21:59.413 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-ADM-14: Employee token cannot generate reports (403)
+2026-02-26 14:21:59.414 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testGenerateReport_WithEmployeeToken_ReturnsForbidden
+2026-02-26 14:21:59.415 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-ADM-11: Admin can retrieve audit trails (200 with list)
+2026-02-26 14:21:59.416 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testGetAuditTrails_ReturnsOk
+2026-02-26 14:21:59.417 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-ADM-12: Employee token cannot access audit trails (403)
+2026-02-26 14:21:59.417 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testGetAuditTrails_WithEmployeeToken_ReturnsForbidden
+2026-02-26 14:21:59.418 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-ADM-05: Employee token cannot revoke roles (403)
+2026-02-26 14:21:59.419 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testRevokeRole_WithEmployeeToken_ReturnsForbidden
+2026-02-26 14:21:59.421 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-ADM-06: Admin can update a leave policy (200)
+2026-02-26 14:21:59.421 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testUpdateLeavePolicy_Valid
+2026-02-26 14:21:59.422 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-ADM-07: Employee token cannot update leave policies (403)
+2026-02-26 14:21:59.423 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testUpdateLeavePolicy_WithEmployeeToken_ReturnsForbidden
+2026-02-26 14:21:59.424 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-ADM-03: Assigning role to non-existent user returns 4xx
+2026-02-26 14:21:59.440 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testAssignRole_NonExistentUser_ReturnsError
+2026-02-26 14:21:59.442 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-ADM-04: Admin can revoke a role from a user (200)
+2026-02-26 14:21:59.442 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testRevokeRole_Valid
+2026-02-26 14:21:59.443 [main] INFO  com.elsm.automation.utils.TestListener - ======= TEST SUITE FINISHED: Admin API Tests =======
+2026-02-26 14:21:59.505 [main] INFO  com.elsm.automation.utils.TestListener - ======= TEST SUITE STARTED: Login UI Tests =======
+2026-02-26 14:21:59.512 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 14:22:10.750 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 14:22:11.491 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000
+2026-02-26 14:22:11.493 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-LGN-10: Accessing /admin without login redirects to /login
+2026-02-26 14:22:11.494 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testAdminRouteRedirectsToLogin
+2026-02-26 14:22:11.737 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 14:22:11.737 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 14:22:11.739 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 14:22:13.271 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 14:22:14.046 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000
+2026-02-26 14:22:14.046 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-LGN-01: Login page loads with Email, Password fields and Login button
+2026-02-26 14:22:14.048 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testLoginPageLoads
+2026-02-26 14:22:14.291 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 14:22:14.292 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 14:22:14.293 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 14:22:15.439 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 14:22:16.140 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000
+2026-02-26 14:22:16.142 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-LGN-06: Blank email shows error or keeps user on login page
+2026-02-26 14:22:16.142 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testLoginWithBlankEmail_ShowsError
+2026-02-26 14:22:16.355 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 14:22:16.356 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 14:22:16.356 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 14:22:17.452 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 14:22:18.203 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000
+2026-02-26 14:22:18.205 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-LGN-07: Blank password shows error or keeps user on login page
+2026-02-26 14:22:18.205 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testLoginWithBlankPassword_ShowsError
+2026-02-26 14:22:18.448 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 14:22:18.448 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 14:22:18.450 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 14:22:19.621 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 14:22:20.355 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000
+2026-02-26 14:22:20.356 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-LGN-05: Invalid password displays 'Invalid credentials' error alert
+2026-02-26 14:22:20.356 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testLoginWithInvalidPassword_ShowsError
+2026-02-26 14:22:20.580 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 14:22:20.582 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 14:22:20.582 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 14:22:21.664 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 14:22:22.387 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000
+2026-02-26 14:22:22.389 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-LGN-09: Accessing /leave-requests without login redirects to /login
+2026-02-26 14:22:22.389 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testProtectedRouteRedirectsToLogin
+2026-02-26 14:22:22.617 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 14:22:22.617 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 14:22:22.618 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 14:22:23.750 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 14:22:24.497 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000
+2026-02-26 14:22:24.497 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-LGN-08: Clicking 'Register here' link navigates to /register
+2026-02-26 14:22:24.497 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testRegisterLinkNavigation
+2026-02-26 14:22:24.712 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 14:22:24.713 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 14:22:24.714 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 14:22:25.876 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 14:22:26.622 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000
+2026-02-26 14:22:26.622 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-LGN-04: Logging in as Admin redirects to Dashboard
+2026-02-26 14:22:26.622 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testSuccessfulAdminLogin
+2026-02-26 14:22:26.881 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 14:22:26.881 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 14:22:26.883 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 14:22:27.983 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 14:22:28.682 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000
+2026-02-26 14:22:28.682 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-LGN-02: Logging in as Employee redirects to Dashboard and shows welcome message
+2026-02-26 14:22:28.684 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testSuccessfulEmployeeLogin
+2026-02-26 14:22:28.906 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 14:22:28.906 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 14:22:28.907 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 14:22:29.962 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 14:22:30.668 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000
+2026-02-26 14:22:30.668 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-LGN-03: Logging in as Manager redirects to Dashboard
+2026-02-26 14:22:30.668 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testSuccessfulManagerLogin
+2026-02-26 14:22:30.879 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 14:22:30.879 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 14:22:30.880 [main] INFO  com.elsm.automation.utils.TestListener - ======= TEST SUITE FINISHED: Login UI Tests =======
+2026-02-26 14:22:30.919 [main] INFO  com.elsm.automation.utils.TestListener - ======= TEST SUITE STARTED: Register UI Tests =======
+2026-02-26 14:22:30.920 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 14:22:32.075 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 14:22:32.755 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000
+2026-02-26 14:22:32.755 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-REG-05: Submitting registration with blank fields stays on register page or shows error
+2026-02-26 14:22:32.755 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testBlankFieldsRegistration_StaysOrShowsError
+2026-02-26 14:22:32.975 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 14:22:32.975 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 14:22:32.976 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 14:22:34.033 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 14:22:34.760 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000
+2026-02-26 14:22:34.760 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-REG-04: Registering with duplicate email displays an error
+2026-02-26 14:22:34.762 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testDuplicateEmailRegistration_ShowsError
+2026-02-26 14:22:35.055 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 14:22:35.055 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 14:22:35.056 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 14:22:36.205 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 14:22:36.968 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000
+2026-02-26 14:22:36.968 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-REG-01: Register page loads with all required fields
+2026-02-26 14:22:36.968 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testRegisterPageLoads
+2026-02-26 14:22:37.236 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 14:22:37.236 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 14:22:37.238 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 14:22:38.414 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 14:22:39.129 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000
+2026-02-26 14:22:39.129 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-REG-02: Valid registration as Employee redirects to Login page
+2026-02-26 14:22:39.129 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testValidEmployeeRegistrationRedirectsToLogin
+2026-02-26 14:22:39.359 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 14:22:39.359 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 14:22:39.360 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 14:22:40.481 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 14:22:41.180 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000
+2026-02-26 14:22:41.180 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-REG-03: Valid registration as Manager redirects to Login page
+2026-02-26 14:22:41.180 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testValidManagerRegistrationRedirectsToLogin
+2026-02-26 14:22:41.431 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 14:22:41.431 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 14:22:41.433 [main] INFO  com.elsm.automation.utils.TestListener - ======= TEST SUITE FINISHED: Register UI Tests =======
+2026-02-26 14:22:41.471 [main] INFO  com.elsm.automation.utils.TestListener - ======= TEST SUITE STARTED: Dashboard UI Tests =======
+2026-02-26 14:22:41.472 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 14:22:42.665 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 14:22:43.338 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000
+2026-02-26 14:22:43.338 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-DSH-09: After logout, accessing dashboard redirects to /login
+2026-02-26 14:22:43.338 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testAfterLogoutDashboardIsProtected
+2026-02-26 14:22:43.579 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 14:22:43.579 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 14:22:43.580 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 14:22:44.620 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 14:22:45.316 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000
+2026-02-26 14:22:45.317 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-DSH-05: Employee clicking 'Apply for Leave' navigates to /leave-requests
+2026-02-26 14:22:45.317 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testApplyLeaveButtonNavigatesToLeaveRequests
+2026-02-26 14:22:45.539 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 14:22:45.539 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 14:22:45.540 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 14:22:46.663 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 14:22:47.370 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000
+2026-02-26 14:22:47.370 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-DSH-04: Employee dashboard shows 'Apply for Leave' button
+2026-02-26 14:22:47.370 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testEmployeeDashboardShowsApplyLeaveButton
+2026-02-26 14:22:47.620 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 14:22:47.620 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 14:22:47.622 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 14:22:48.773 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 14:22:49.510 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000
+2026-02-26 14:22:49.511 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-DSH-02: Employee dashboard displays Leave Balance section
+2026-02-26 14:22:49.511 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testEmployeeDashboardShowsLeaveBalanceSection
+2026-02-26 14:22:49.743 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 14:22:49.744 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 14:22:49.745 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 14:22:50.799 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 14:22:51.530 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000
+2026-02-26 14:22:51.531 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-DSH-03: Employee dashboard displays Leave History section
+2026-02-26 14:22:51.531 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testEmployeeDashboardShowsLeaveHistorySection
+2026-02-26 14:22:51.799 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 14:22:51.799 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 14:22:51.800 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 14:22:52.939 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 14:22:53.643 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000
+2026-02-26 14:22:53.643 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-DSH-01: Employee dashboard shows Welcome message after login
+2026-02-26 14:22:53.643 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testEmployeeDashboardShowsWelcomeMessage
+2026-02-26 14:22:53.899 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 14:22:53.899 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 14:22:53.900 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 14:22:55.035 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 14:22:55.788 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000
+2026-02-26 14:22:55.788 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-DSH-08: Clicking Logout redirects to /login page
+2026-02-26 14:22:55.788 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testLogoutRedirectsToLogin
+2026-02-26 14:22:56.072 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 14:22:56.072 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 14:22:56.073 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 14:22:57.201 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 14:22:57.909 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000
+2026-02-26 14:22:57.909 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-DSH-07: Manager dashboard does NOT show 'Apply for Leave' button
+2026-02-26 14:22:57.909 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testManagerDashboardDoesNotShowApplyLeaveButton
+2026-02-26 14:22:58.129 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 14:22:58.130 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 14:22:58.131 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 14:22:59.251 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 14:22:59.948 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000
+2026-02-26 14:22:59.948 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-DSH-06: Manager dashboard shows Welcome message and Pending Requests section
+2026-02-26 14:22:59.949 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testManagerDashboardShowsPendingSection
+2026-02-26 14:23:00.240 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 14:23:00.241 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 14:23:00.241 [main] INFO  com.elsm.automation.utils.TestListener - ======= TEST SUITE FINISHED: Dashboard UI Tests =======
+2026-02-26 14:23:00.289 [main] INFO  com.elsm.automation.utils.TestListener - ======= TEST SUITE STARTED: Leave Requests UI Tests =======
+2026-02-26 14:23:00.292 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 14:23:01.472 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 14:23:02.190 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000
+2026-02-26 14:23:02.190 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-LVR-03: Clicking 'Cancel' in the modal closes it without submitting
+2026-02-26 14:23:02.190 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testCancelModalDoesNotSubmit
+2026-02-26 14:23:02.400 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 14:23:02.401 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 14:23:02.401 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 14:23:03.530 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 14:23:04.238 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000
+2026-02-26 14:23:04.238 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-LVR-01: Leave Requests page loads after employee login
+2026-02-26 14:23:04.240 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testLeaveRequestsPageLoads
+2026-02-26 14:23:04.483 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 14:23:04.483 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 14:23:04.484 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 14:23:05.603 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 14:23:06.321 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000
+2026-02-26 14:23:06.321 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-LVR-02: Clicking 'Apply for Leave' button opens the modal form
+2026-02-26 14:23:06.321 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testOpenModalShowsForm
+2026-02-26 14:23:06.554 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 14:23:06.554 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 14:23:06.555 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 14:23:07.606 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 14:23:08.296 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000
+2026-02-26 14:23:08.296 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-LVR-08: Submitting with all blank fields shows validation error
+2026-02-26 14:23:08.296 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testSubmitWithAllBlankFields_ShowsError
+2026-02-26 14:23:08.512 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 14:23:08.512 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 14:23:08.513 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 14:23:09.550 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 14:23:10.243 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000
+2026-02-26 14:23:10.243 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-LVR-06: Submitting without selecting a leave type shows validation error
+2026-02-26 14:23:10.243 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testSubmitWithoutLeaveType_ShowsError
+2026-02-26 14:23:10.447 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 14:23:10.447 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 14:23:10.448 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 14:23:11.564 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 14:23:12.269 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000
+2026-02-26 14:23:12.269 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-LVR-07: Submitting without notes shows validation error
+2026-02-26 14:23:12.272 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testSubmitWithoutNotes_ShowsError
+2026-02-26 14:23:12.516 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 14:23:12.517 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 14:23:12.518 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 14:23:13.557 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 14:23:14.238 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000
+2026-02-26 14:23:14.238 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-LVR-09: Unauthenticated access to /leave-requests redirects to /login
+2026-02-26 14:23:14.238 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testUnauthenticatedAccessRedirects
+2026-02-26 14:23:14.437 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 14:23:14.438 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 14:23:14.439 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 14:23:15.544 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 14:23:16.275 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000
+2026-02-26 14:23:16.275 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-LVR-05: Submitting a VACATION leave request shows success
+2026-02-26 14:23:16.275 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testVacationLeaveRequestSubmissionShowsSuccess
+2026-02-26 14:23:16.530 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 14:23:16.530 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 14:23:16.531 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 14:23:17.727 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 14:23:18.422 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000
+2026-02-26 14:23:18.422 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-LVR-04: Submitting a valid leave request shows success alert
+2026-02-26 14:23:18.424 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testValidLeaveRequestSubmissionShowsSuccess
+2026-02-26 14:23:18.645 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 14:23:18.645 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 14:23:18.646 [main] INFO  com.elsm.automation.utils.TestListener - ======= TEST SUITE FINISHED: Leave Requests UI Tests =======
+2026-02-26 14:23:18.675 [main] INFO  com.elsm.automation.utils.TestListener - ======= TEST SUITE STARTED: Manager Dashboard UI Tests =======
+2026-02-26 14:23:18.677 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 14:23:19.828 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 14:23:20.531 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000
+2026-02-26 14:23:20.531 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-MGR-05: Employee cannot access /manager page (redirected)
+2026-02-26 14:23:20.533 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testEmployeeCannotAccessManagerDashboard
+2026-02-26 14:23:20.760 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 14:23:20.760 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 14:23:20.761 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 14:23:21.804 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 14:23:22.498 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000
+2026-02-26 14:23:22.500 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-MGR-03: Manager can approve a pending leave request and sees success alert
+2026-02-26 14:23:22.500 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testManagerCanApprovePendingRequest
+2026-02-26 14:23:22.718 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 14:23:22.718 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 14:23:22.720 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 14:23:23.773 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 14:23:24.499 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000
+2026-02-26 14:23:24.501 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-MGR-04: Manager can reject a pending leave request and sees success alert
+2026-02-26 14:23:24.501 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testManagerCanRejectPendingRequest
+2026-02-26 14:23:24.763 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 14:23:24.763 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 14:23:24.765 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 14:23:25.904 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 14:23:26.230 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000
+2026-02-26 14:23:26.232 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-MGR-02: Manager dashboard heading reads 'Pending Leave Requests'
+2026-02-26 14:23:26.232 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testManagerDashboardHeading
+2026-02-26 14:23:26.738 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 14:23:26.739 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 14:23:26.740 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 14:23:27.888 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 14:23:28.637 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000
+2026-02-26 14:23:28.637 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-MGR-01: Manager can access /manager dashboard
+2026-02-26 14:23:28.637 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testManagerDashboardLoads
+2026-02-26 14:23:28.936 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 14:23:28.936 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 14:23:28.938 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 14:23:30.071 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 14:23:30.778 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000
+2026-02-26 14:23:30.779 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-MGR-06: Unauthenticated access to /manager redirects to /login
+2026-02-26 14:23:30.779 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testUnauthenticatedAccessToManagerRedirects
+2026-02-26 14:23:31.050 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 14:23:31.050 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 14:23:31.051 [main] INFO  com.elsm.automation.utils.TestListener - ======= TEST SUITE FINISHED: Manager Dashboard UI Tests =======
+2026-02-26 14:23:31.079 [main] INFO  com.elsm.automation.utils.TestListener - ======= TEST SUITE STARTED: Admin Dashboard UI Tests =======
+2026-02-26 14:23:31.081 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 14:23:32.348 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 14:23:33.278 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000
+2026-02-26 14:23:33.278 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-ADM-01: Admin user can access the Admin Dashboard
+2026-02-26 14:23:33.278 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testAdminCanAccessDashboard
+2026-02-26 14:23:33.859 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 14:23:33.859 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 14:23:33.861 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 14:23:35.097 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 14:23:35.805 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000
+2026-02-26 14:23:35.805 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-ADM-02: Admin Dashboard page heading is 'Admin Dashboard'
+2026-02-26 14:23:35.805 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testAdminDashboardHeading
+2026-02-26 14:23:36.073 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 14:23:36.073 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 14:23:36.074 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 14:23:37.200 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 14:23:37.881 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000
+2026-02-26 14:23:37.881 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-ADM-03: Employee cannot access /admin page (redirected to /)
+2026-02-26 14:23:37.883 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testEmployeeCannotAccessAdminDashboard
+2026-02-26 14:23:38.091 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 14:23:38.091 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 14:23:38.092 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 14:23:39.226 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 14:23:39.931 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000
+2026-02-26 14:23:39.931 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-ADM-04: Manager cannot access /admin page (redirected to /)
+2026-02-26 14:23:39.931 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testManagerCannotAccessAdminDashboard
+2026-02-26 14:23:40.158 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 14:23:40.158 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 14:23:40.160 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 14:23:41.278 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 14:23:42.037 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000
+2026-02-26 14:23:42.037 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-ADM-05: Unauthenticated access to /admin redirects to /login
+2026-02-26 14:23:42.037 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testUnauthenticatedAccessToAdminRedirects
+2026-02-26 14:23:42.298 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 14:23:42.298 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 14:23:42.299 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 14:23:43.367 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 14:23:44.145 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000
+2026-02-26 14:23:44.145 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-ADM-06: Unauthenticated access to /audit redirects to /login
+2026-02-26 14:23:44.145 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testUnauthenticatedAccessToAuditRedirects
+2026-02-26 14:23:44.393 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 14:23:44.393 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 14:23:44.394 [main] INFO  com.elsm.automation.utils.TestListener - ======= TEST SUITE FINISHED: Admin Dashboard UI Tests =======
+2026-02-26 14:23:44.458 [main] INFO  com.elsm.automation.config.BaseApiTest - Report flushed.
+2026-02-26 15:33:04.835 [main] INFO  com.elsm.automation.config.ConfigReader - Configuration loaded from config/config.properties
+2026-02-26 15:33:05.540 [main] INFO  com.elsm.automation.config.BaseApiTest - REST Assured base URI set to: http://localhost:8080/api
+2026-02-26 15:33:05.541 [main] INFO  com.elsm.automation.utils.ApiUtils - POST /auth/login  email=employee@test.com
+2026-02-26 15:33:07.058 [main] WARN  com.elsm.automation.config.BaseApiTest - Could not acquire token for employee@test.com in @BeforeSuite: Login failed for employee@test.com – HTTP 401 – 
+2026-02-26 15:33:07.059 [main] INFO  com.elsm.automation.utils.ApiUtils - POST /auth/login  email=manager@test.com
+2026-02-26 15:33:07.212 [main] WARN  com.elsm.automation.config.BaseApiTest - Could not acquire token for manager@test.com in @BeforeSuite: Login failed for manager@test.com – HTTP 401 – 
+2026-02-26 15:33:07.212 [main] INFO  com.elsm.automation.utils.ApiUtils - POST /auth/login  email=admin@test.com
+2026-02-26 15:33:07.357 [main] WARN  com.elsm.automation.config.BaseApiTest - Could not acquire token for admin@test.com in @BeforeSuite: Login failed for admin@test.com – HTTP 401 – 
+2026-02-26 15:33:07.357 [main] WARN  com.elsm.automation.config.BaseApiTest - One or more tokens could not be acquired in @BeforeSuite. Individual test classes will attempt their own login.
+2026-02-26 15:33:07.363 [main] INFO  com.elsm.automation.utils.TestListener - ======= TEST SUITE STARTED: Auth API Tests =======
+2026-02-26 15:33:07.379 [main] INFO  com.elsm.automation.utils.ApiUtils - POST /auth/login  email=probe@probe.com
+2026-02-26 15:33:07.399 [main] INFO  com.elsm.automation.config.BaseApiTest - AuthApiTest: server is reachable (probe returned HTTP 401).
+2026-02-26 15:33:07.412 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-AUTH-08: JWT response body contains all required fields (token, id, name, email, roles)
+2026-02-26 15:33:07.600 [main] INFO  com.elsm.automation.utils.ApiUtils - POST /auth/login  email=employee@test.com
+2026-02-26 15:33:07.820 [main] ERROR com.elsm.automation.utils.TestListener - [FAIL]  testLoginResponseContainsRequiredFields – 
+expected: 200
+ but was: 401
+2026-02-26 15:33:07.837 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-AUTH-13: Content-Type of login response is application/json
+2026-02-26 15:33:07.838 [main] INFO  com.elsm.automation.utils.ApiUtils - POST /auth/login  email=employee@test.com
+2026-02-26 15:33:07.982 [main] ERROR com.elsm.automation.utils.TestListener - [FAIL]  testLoginResponseContentType – [Content-Type must include application/json] 
+Expecting actual:
+  ""
+to contain:
+  "application/json" 
+2026-02-26 15:33:07.985 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-AUTH-06: Login with blank email returns non-200 response
+2026-02-26 15:33:07.985 [main] INFO  com.elsm.automation.utils.ApiUtils - POST /auth/login  email=
+2026-02-26 15:33:08.005 [main] INFO  com.elsm.automation.utils.TestListener - [PASS]  testLoginWithBlankEmail
+2026-02-26 15:33:08.007 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-AUTH-07: Login with blank password returns non-200 response
+2026-02-26 15:33:08.007 [main] INFO  com.elsm.automation.utils.ApiUtils - POST /auth/login  email=employee@test.com
+2026-02-26 15:33:08.025 [main] INFO  com.elsm.automation.utils.TestListener - [PASS]  testLoginWithBlankPassword
+2026-02-26 15:33:08.027 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-AUTH-04: Login with invalid password returns 401 Unauthorized
+2026-02-26 15:33:08.027 [main] INFO  com.elsm.automation.utils.ApiUtils - POST /auth/login  email=employee@test.com
+2026-02-26 15:33:08.167 [main] INFO  com.elsm.automation.utils.TestListener - [PASS]  testLoginWithInvalidPassword
+2026-02-26 15:33:08.169 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-AUTH-05: Login with non-existent email returns 401 Unauthorized
+2026-02-26 15:33:08.170 [main] INFO  com.elsm.automation.utils.ApiUtils - POST /auth/login  email=nobody_b35c82c1-b854-4a55-a3cd-f1a3b20db5a3@elms.com
+2026-02-26 15:33:08.188 [main] INFO  com.elsm.automation.utils.TestListener - [PASS]  testLoginWithNonExistentEmail
+2026-02-26 15:33:08.189 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-AUTH-03: Successful login with valid admin credentials returns JWT token
+2026-02-26 15:33:08.189 [main] INFO  com.elsm.automation.utils.ApiUtils - POST /auth/login  email=admin@test.com
+2026-02-26 15:33:08.324 [main] ERROR com.elsm.automation.utils.TestListener - [FAIL]  testLoginWithValidAdminCredentials – [HTTP status should be 200 OK for valid admin login] 
+expected: 200
+ but was: 401
+2026-02-26 15:33:08.326 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-AUTH-01: Successful login with valid employee credentials returns JWT token
+2026-02-26 15:33:08.326 [main] INFO  com.elsm.automation.utils.ApiUtils - POST /auth/login  email=employee@test.com
+2026-02-26 15:33:08.467 [main] ERROR com.elsm.automation.utils.TestListener - [FAIL]  testLoginWithValidEmployeeCredentials – [HTTP status should be 200 OK for valid employee login] 
+expected: 200
+ but was: 401
+2026-02-26 15:33:08.469 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-AUTH-02: Successful login with valid manager credentials returns JWT token
+2026-02-26 15:33:08.469 [main] INFO  com.elsm.automation.utils.ApiUtils - POST /auth/login  email=manager@test.com
+2026-02-26 15:33:08.601 [main] ERROR com.elsm.automation.utils.TestListener - [FAIL]  testLoginWithValidManagerCredentials – [HTTP status should be 200 OK for valid manager login] 
+expected: 200
+ but was: 401
+2026-02-26 15:33:08.603 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-AUTH-12: /register endpoint behaves identically to /signup
+2026-02-26 15:33:09.424 [main] INFO  com.elsm.automation.utils.TestListener - [PASS]  testRegisterEndpointBehavesLikeSignup
+2026-02-26 15:33:09.425 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-AUTH-11: Signup with a duplicate email returns a non-2xx error
+2026-02-26 15:33:09.426 [main] INFO  com.elsm.automation.utils.ApiUtils - POST /auth/signup  email=dup_1b2cf23d@elms.com role=EMPLOYEE
+2026-02-26 15:33:09.581 [main] INFO  com.elsm.automation.utils.ApiUtils - POST /auth/signup  email=dup_1b2cf23d@elms.com role=EMPLOYEE
+2026-02-26 15:33:09.793 [main] ERROR com.elsm.automation.utils.TestListener - [FAIL]  testSignupWithDuplicateEmail – [Duplicate email should not return 200] 
+Expecting actual:
+  200
+not to be equal to:
+  200
+
+2026-02-26 15:33:09.797 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-AUTH-09: Signup with valid employee data returns 200 and user DTO
+2026-02-26 15:33:09.800 [main] INFO  com.elsm.automation.utils.ApiUtils - POST /auth/signup  email=emp_3e171856@elms.com role=EMPLOYEE
+2026-02-26 15:33:09.985 [main] INFO  com.elsm.automation.utils.TestListener - [PASS]  testSignupWithValidEmployeeData
+2026-02-26 15:33:09.986 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-AUTH-10: Signup with valid manager data returns 200 with MANAGER role
+2026-02-26 15:33:09.987 [main] INFO  com.elsm.automation.utils.ApiUtils - POST /auth/signup  email=mgr_42cfccd1@elms.com role=MANAGER
+2026-02-26 15:33:10.149 [main] INFO  com.elsm.automation.utils.TestListener - [PASS]  testSignupWithValidManagerData
+2026-02-26 15:33:10.152 [main] INFO  com.elsm.automation.utils.TestListener - ======= TEST SUITE FINISHED: Auth API Tests =======
+2026-02-26 15:33:10.517 [main] INFO  com.elsm.automation.utils.TestListener - ======= TEST SUITE STARTED: Employee API Tests =======
+2026-02-26 15:33:10.520 [main] INFO  com.elsm.automation.utils.ApiUtils - POST /auth/login  email=employee@test.com
+2026-02-26 15:33:10.659 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-EMP-14: Cancelling a non-existent leave request returns 4xx
+2026-02-26 15:33:10.660 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testCancelLeaveRequest_NonExistentId_ReturnsError
+2026-02-26 15:33:10.661 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-EMP-01: Employee can fetch their leave balance (200 with list)
+2026-02-26 15:33:10.662 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testGetLeaveBalance_ReturnsOk
+2026-02-26 15:33:10.663 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-EMP-04: Manager token cannot access employee leave-balance (403)
+2026-02-26 15:33:10.663 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testGetLeaveBalance_WithManagerToken_ReturnsForbidden
+2026-02-26 15:33:10.664 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-EMP-03: Accessing leave-balance without a token returns 401 or 403
+2026-02-26 15:33:10.665 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testGetLeaveBalance_WithoutToken_ReturnsForbidden
+2026-02-26 15:33:10.665 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-EMP-02: Leave balance response items contain leaveType and balance fields
+2026-02-26 15:33:10.666 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testLeaveBalanceContainsRequiredFields
+2026-02-26 15:33:10.667 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-EMP-09: Submitting a leave request without startDate returns 400
+2026-02-26 15:33:10.667 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testSubmitLeaveRequest_MissingStartDate_ReturnsBadRequest
+2026-02-26 15:33:10.668 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-EMP-07: Employee can submit a valid leave request (200 with PENDING status)
+2026-02-26 15:33:10.669 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testSubmitLeaveRequest_Valid
+2026-02-26 15:33:10.670 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-EMP-11: Submitting leave request without token returns 401 or 403
+2026-02-26 15:33:10.671 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testSubmitLeaveRequest_WithoutToken_ReturnsForbidden
+2026-02-26 15:33:10.673 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-EMP-05: Employee can fetch their leave history (200)
+2026-02-26 15:33:10.674 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testGetLeaveHistory_ReturnsOk
+2026-02-26 15:33:10.676 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-EMP-06: Leave history items contain id, leaveType, status, startDate, endDate
+2026-02-26 15:33:10.677 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testLeaveHistoryContainsRequiredFields
+2026-02-26 15:33:10.679 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-EMP-10: Submitting a leave request without endDate returns 400
+2026-02-26 15:33:10.680 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testSubmitLeaveRequest_MissingEndDate_ReturnsBadRequest
+2026-02-26 15:33:10.681 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-EMP-08: Submitting a leave request without leaveType returns 400
+2026-02-26 15:33:10.682 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testSubmitLeaveRequest_MissingLeaveType_ReturnsBadRequest
+2026-02-26 15:33:10.685 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-EMP-12: Employee can modify a PENDING leave request (200)
+2026-02-26 15:33:10.686 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testModifyLeaveRequest_Valid
+2026-02-26 15:33:10.687 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-EMP-13: Employee can cancel a PENDING leave request (200 with CANCELLED status)
+2026-02-26 15:33:10.687 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testCancelLeaveRequest_Valid
+2026-02-26 15:33:10.688 [main] INFO  com.elsm.automation.utils.TestListener - ======= TEST SUITE FINISHED: Employee API Tests =======
+2026-02-26 15:33:10.736 [main] INFO  com.elsm.automation.utils.TestListener - ======= TEST SUITE STARTED: Manager API Tests =======
+2026-02-26 15:33:10.739 [main] INFO  com.elsm.automation.utils.ApiUtils - POST /auth/login  email=manager@test.com
+2026-02-26 15:33:10.897 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-MGR-05: Manager can approve a pending leave request (200)
+2026-02-26 15:33:10.898 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testApproveLeaveRequest_Valid
+2026-02-26 15:33:10.899 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-MGR-07: Deciding on a non-existent leave request returns 4xx
+2026-02-26 15:33:10.900 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testDecideLeave_NonExistentId_ReturnsError
+2026-02-26 15:33:10.901 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-MGR-08: Employee token cannot approve/reject leaves (403)
+2026-02-26 15:33:10.901 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testDecideLeave_WithEmployeeToken_ReturnsForbidden
+2026-02-26 15:33:10.902 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-MGR-01: Manager can retrieve pending leave requests (200)
+2026-02-26 15:33:10.903 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testGetPendingRequests_ReturnsOk
+2026-02-26 15:33:10.904 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-MGR-04: Employee token cannot access manager pending-requests (403)
+2026-02-26 15:33:10.904 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testGetPendingRequests_WithEmployeeToken_ReturnsForbidden
+2026-02-26 15:33:10.906 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-MGR-03: Accessing pending-requests without token returns 401 or 403
+2026-02-26 15:33:10.906 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testGetPendingRequests_WithoutToken_ReturnsForbidden
+2026-02-26 15:33:10.908 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-MGR-11: Manager can retrieve team leave history (200)
+2026-02-26 15:33:10.909 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testGetTeamHistory_ReturnsOk
+2026-02-26 15:33:10.910 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-MGR-12: Admin token cannot access manager-only team-history (403)
+2026-02-26 15:33:10.910 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testGetTeamHistory_WithAdminToken_ReturnsForbidden
+2026-02-26 15:33:10.911 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-MGR-09: Manager can retrieve team leave status (200)
+2026-02-26 15:33:10.912 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testGetTeamLeaves_ReturnsOk
+2026-02-26 15:33:10.914 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-MGR-10: Employee token cannot access team-leaves (403)
+2026-02-26 15:33:10.914 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testGetTeamLeaves_WithEmployeeToken_ReturnsForbidden
+2026-02-26 15:33:10.915 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-MGR-02: Pending requests list items contain required fields
+2026-02-26 15:33:10.916 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testPendingRequestsContainRequiredFields
+2026-02-26 15:33:10.917 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-MGR-06: Manager can reject a leave request (200)
+2026-02-26 15:33:10.918 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testRejectLeaveRequest_Valid
+2026-02-26 15:33:10.918 [main] INFO  com.elsm.automation.utils.TestListener - ======= TEST SUITE FINISHED: Manager API Tests =======
+2026-02-26 15:33:10.963 [main] INFO  com.elsm.automation.utils.TestListener - ======= TEST SUITE STARTED: Admin API Tests =======
+2026-02-26 15:33:10.966 [main] INFO  com.elsm.automation.utils.ApiUtils - POST /auth/login  email=admin@test.com
+2026-02-26 15:33:11.105 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-ADM-09: Adjusting balance for non-existent user returns 400
+2026-02-26 15:33:11.105 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testAdjustLeaveBalance_NonExistentUser_ReturnsBadRequest
+2026-02-26 15:33:11.106 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-ADM-08: Admin can adjust leave balance for an employee (200)
+2026-02-26 15:33:11.107 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testAdjustLeaveBalance_Valid
+2026-02-26 15:33:11.107 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-ADM-10: Employee token cannot adjust leave balance (403)
+2026-02-26 15:33:11.108 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testAdjustLeaveBalance_WithEmployeeToken_ReturnsForbidden
+2026-02-26 15:33:11.109 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-ADM-15: All admin endpoints reject unauthenticated requests (401 or 403)
+2026-02-26 15:33:11.110 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testAdminEndpoints_WithoutToken_ReturnsForbidden
+2026-02-26 15:33:11.111 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-ADM-01: Admin can assign a role to a user (200)
+2026-02-26 15:33:11.112 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testAssignRole_Valid
+2026-02-26 15:33:11.113 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-ADM-02: Employee token cannot assign roles (403)
+2026-02-26 15:33:11.114 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testAssignRole_WithEmployeeToken_ReturnsForbidden
+2026-02-26 15:33:11.114 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-ADM-13: Admin can generate a leave report (200)
+2026-02-26 15:33:11.115 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testGenerateReport_Valid
+2026-02-26 15:33:11.116 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-ADM-14: Employee token cannot generate reports (403)
+2026-02-26 15:33:11.117 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testGenerateReport_WithEmployeeToken_ReturnsForbidden
+2026-02-26 15:33:11.118 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-ADM-11: Admin can retrieve audit trails (200 with list)
+2026-02-26 15:33:11.118 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testGetAuditTrails_ReturnsOk
+2026-02-26 15:33:11.119 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-ADM-12: Employee token cannot access audit trails (403)
+2026-02-26 15:33:11.119 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testGetAuditTrails_WithEmployeeToken_ReturnsForbidden
+2026-02-26 15:33:11.120 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-ADM-05: Employee token cannot revoke roles (403)
+2026-02-26 15:33:11.121 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testRevokeRole_WithEmployeeToken_ReturnsForbidden
+2026-02-26 15:33:11.122 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-ADM-06: Admin can update a leave policy (200)
+2026-02-26 15:33:11.122 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testUpdateLeavePolicy_Valid
+2026-02-26 15:33:11.124 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-ADM-07: Employee token cannot update leave policies (403)
+2026-02-26 15:33:11.125 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testUpdateLeavePolicy_WithEmployeeToken_ReturnsForbidden
+2026-02-26 15:33:11.137 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-ADM-03: Assigning role to non-existent user returns 4xx
+2026-02-26 15:33:11.138 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testAssignRole_NonExistentUser_ReturnsError
+2026-02-26 15:33:11.138 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-ADM-04: Admin can revoke a role from a user (200)
+2026-02-26 15:33:11.139 [main] WARN  com.elsm.automation.utils.TestListener - [SKIP]  testRevokeRole_Valid
+2026-02-26 15:33:11.139 [main] INFO  com.elsm.automation.utils.TestListener - ======= TEST SUITE FINISHED: Admin API Tests =======
+2026-02-26 15:33:11.185 [main] INFO  com.elsm.automation.utils.TestListener - ======= TEST SUITE STARTED: Login UI Tests =======
+2026-02-26 15:33:11.190 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 15:33:13.739 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 15:33:14.992 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000 (title: 'Employee Leave Management System')
+2026-02-26 15:33:14.994 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-LGN-10: Accessing /admin without login redirects to /login
+2026-02-26 15:33:16.930 [main] INFO  com.elsm.automation.utils.TestListener - [PASS]  testAdminRouteRedirectsToLogin
+2026-02-26 15:33:17.159 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 15:33:17.159 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 15:33:17.161 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 15:33:18.720 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 15:33:19.957 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000 (title: 'Employee Leave Management System')
+2026-02-26 15:33:19.959 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-LGN-01: Login page loads with Email, Password fields and Login button
+2026-02-26 15:33:20.333 [main] INFO  com.elsm.automation.utils.TestListener - [PASS]  testLoginPageLoads
+2026-02-26 15:33:20.565 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 15:33:20.565 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 15:33:20.567 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 15:33:21.644 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 15:33:22.892 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000 (title: 'Employee Leave Management System')
+2026-02-26 15:33:22.892 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-LGN-06: Blank email shows error or keeps user on login page
+2026-02-26 15:33:25.033 [main] INFO  com.elsm.automation.utils.TestListener - [PASS]  testLoginWithBlankEmail_ShowsError
+2026-02-26 15:33:25.255 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 15:33:25.255 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 15:33:25.257 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 15:33:26.253 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 15:33:27.506 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000 (title: 'Employee Leave Management System')
+2026-02-26 15:33:27.506 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-LGN-07: Blank password shows error or keeps user on login page
+2026-02-26 15:33:29.737 [main] INFO  com.elsm.automation.utils.TestListener - [PASS]  testLoginWithBlankPassword_ShowsError
+2026-02-26 15:33:29.978 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 15:33:29.978 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 15:33:29.979 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 15:33:30.928 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 15:33:32.958 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000 (title: 'Employee Leave Management System')
+2026-02-26 15:33:32.958 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-LGN-05: Invalid password displays 'Invalid credentials' error alert
+2026-02-26 15:33:33.989 [main] INFO  com.elsm.automation.utils.TestListener - [PASS]  testLoginWithInvalidPassword_ShowsError
+2026-02-26 15:33:34.231 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 15:33:34.232 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 15:33:34.233 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 15:33:35.291 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 15:33:36.505 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000 (title: 'Employee Leave Management System')
+2026-02-26 15:33:36.505 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-LGN-09: Accessing /leave-requests without login redirects to /login
+2026-02-26 15:33:38.123 [main] INFO  com.elsm.automation.utils.TestListener - [PASS]  testProtectedRouteRedirectsToLogin
+2026-02-26 15:33:38.370 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 15:33:38.370 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 15:33:38.372 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 15:33:39.485 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 15:33:40.726 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000 (title: 'Employee Leave Management System')
+2026-02-26 15:33:40.726 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-LGN-08: Clicking 'Register here' link navigates to /register page
+2026-02-26 15:33:41.444 [main] INFO  com.elsm.automation.utils.TestListener - [PASS]  testRegisterLinkNavigation
+2026-02-26 15:33:41.695 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 15:33:41.696 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 15:33:41.697 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 15:33:42.659 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 15:33:43.875 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000 (title: 'Employee Leave Management System')
+2026-02-26 15:33:43.875 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-LGN-04: Logging in as Admin redirects to Dashboard
+2026-02-26 15:34:05.499 [main] ERROR com.elsm.automation.utils.TestListener - [FAIL]  testSuccessfulAdminLogin – [Dashboard should load after successful admin login] 
+Expecting value to be true but was false
+2026-02-26 15:34:05.848 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 15:34:05.848 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 15:34:05.849 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 15:34:06.817 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 15:34:08.822 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000 (title: 'Employee Leave Management System')
+2026-02-26 15:34:08.822 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-LGN-02: Logging in as Employee redirects to Dashboard and shows welcome message
+2026-02-26 15:34:30.365 [main] ERROR com.elsm.automation.utils.TestListener - [FAIL]  testSuccessfulEmployeeLogin – [Dashboard should load after successful employee login] 
+Expecting value to be true but was false
+2026-02-26 15:34:30.716 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 15:34:30.717 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 15:34:30.718 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 15:34:31.787 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 15:34:33.794 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000 (title: 'Employee Leave Management System')
+2026-02-26 15:34:33.794 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-LGN-03: Logging in as Manager redirects to Dashboard
+2026-02-26 15:34:55.314 [main] ERROR com.elsm.automation.utils.TestListener - [FAIL]  testSuccessfulManagerLogin – [Dashboard should load after successful manager login] 
+Expecting value to be true but was false
+2026-02-26 15:34:55.653 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 15:34:55.654 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 15:34:55.655 [main] INFO  com.elsm.automation.utils.TestListener - ======= TEST SUITE FINISHED: Login UI Tests =======
+2026-02-26 15:34:55.713 [main] INFO  com.elsm.automation.utils.TestListener - ======= TEST SUITE STARTED: Register UI Tests =======
+2026-02-26 15:34:55.715 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 15:34:56.810 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 15:34:58.848 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000 (title: 'Employee Leave Management System')
+2026-02-26 15:34:58.848 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-REG-05: Submitting the registration form with all blank fields stays or shows error
+2026-02-26 15:35:21.582 [main] ERROR com.elsm.automation.utils.TestListener - [FAIL]  testBlankFieldsRegistration_StaysOrShowsError – [Blank registration must either show error or remain on the register page] 
+Expecting value to be true but was false
+2026-02-26 15:35:21.931 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 15:35:21.931 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 15:35:21.933 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 15:35:23.165 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 15:35:24.357 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000 (title: 'Employee Leave Management System')
+2026-02-26 15:35:24.357 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-REG-04: Registering with a duplicate email displays an error
+2026-02-26 15:35:51.808 [main] INFO  com.elsm.automation.utils.TestListener - [PASS]  testDuplicateEmailRegistration_ShowsError
+2026-02-26 15:35:52.123 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 15:35:52.123 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 15:35:52.124 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 15:35:53.166 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 15:35:54.378 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000 (title: 'Employee Leave Management System')
+2026-02-26 15:35:54.378 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-REG-01: Register page loads with all required form fields
+2026-02-26 15:35:54.908 [main] INFO  com.elsm.automation.utils.TestListener - [PASS]  testRegisterPageLoads
+2026-02-26 15:35:55.136 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 15:35:55.137 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 15:35:55.138 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 15:35:56.111 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 15:35:57.344 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000 (title: 'Employee Leave Management System')
+2026-02-26 15:35:57.344 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-REG-02: Valid registration as Employee redirects to /login page
+2026-02-26 15:36:01.190 [main] INFO  com.elsm.automation.utils.TestListener - [PASS]  testValidEmployeeRegistrationRedirectsToLogin
+2026-02-26 15:36:01.463 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 15:36:01.464 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 15:36:01.465 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 15:36:02.600 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 15:36:04.596 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000 (title: 'Employee Leave Management System')
+2026-02-26 15:36:04.596 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-REG-03: Valid registration as Manager redirects to /login page
+2026-02-26 15:36:08.367 [main] INFO  com.elsm.automation.utils.TestListener - [PASS]  testValidManagerRegistrationRedirectsToLogin
+2026-02-26 15:36:08.606 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 15:36:08.607 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 15:36:08.608 [main] INFO  com.elsm.automation.utils.TestListener - ======= TEST SUITE FINISHED: Register UI Tests =======
+2026-02-26 15:36:08.647 [main] INFO  com.elsm.automation.utils.TestListener - ======= TEST SUITE STARTED: Dashboard UI Tests =======
+2026-02-26 15:36:08.648 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 15:36:09.754 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 15:36:10.975 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000 (title: 'Employee Leave Management System')
+2026-02-26 15:36:10.975 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-DSH-09: After logout, accessing / redirects back to /login
+2026-02-26 15:36:32.623 [main] ERROR com.elsm.automation.utils.TestListener - [FAIL]  testAfterLogoutDashboardIsProtected – 
+Expecting value to be true but was false
+2026-02-26 15:36:32.951 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 15:36:32.952 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 15:36:32.953 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 15:36:34.018 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 15:36:36.023 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000 (title: 'Employee Leave Management System')
+2026-02-26 15:36:36.023 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-DSH-05: Clicking 'Apply for Leave' navigates to /leave-requests
+2026-02-26 15:36:57.564 [main] ERROR com.elsm.automation.utils.TestListener - [FAIL]  testApplyLeaveButtonNavigatesToLeaveRequests – Expected condition failed: waiting for element to be clickable: By.xpath: //button[contains(text(),'Apply for Leave')] (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 145.0.7632.116, chrome: {chromedriverVersion: 145.0.7632.117 (de4e5d6e13b..., userDataDir: C:\Users\TADAKA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50137}, goog:processID: 8456, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50137/devtoo..., se:cdpVersion: 145.0.7632.116, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 5584cdf1f2260d5d98b993421c848add
+2026-02-26 15:36:57.920 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 15:36:57.920 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 15:36:57.921 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 15:36:59.261 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 15:37:01.213 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000 (title: 'Employee Leave Management System')
+2026-02-26 15:37:01.213 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-DSH-04: Employee dashboard shows 'Apply for Leave' button
+2026-02-26 15:37:22.798 [main] ERROR com.elsm.automation.utils.TestListener - [FAIL]  testEmployeeDashboardShowsApplyLeaveButton – 
+Expecting value to be true but was false
+2026-02-26 15:37:23.121 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 15:37:23.121 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 15:37:23.122 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 15:37:24.145 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 15:37:26.153 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000 (title: 'Employee Leave Management System')
+2026-02-26 15:37:26.153 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-DSH-02: Employee dashboard displays Leave Balance section
+2026-02-26 15:37:47.727 [main] ERROR com.elsm.automation.utils.TestListener - [FAIL]  testEmployeeDashboardShowsLeaveBalanceSection – 
+Expecting value to be true but was false
+2026-02-26 15:37:48.013 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 15:37:48.013 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 15:37:48.014 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 15:37:49.002 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 15:37:51.033 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000 (title: 'Employee Leave Management System')
+2026-02-26 15:37:51.033 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-DSH-03: Employee dashboard displays Leave History section
+2026-02-26 15:38:12.604 [main] ERROR com.elsm.automation.utils.TestListener - [FAIL]  testEmployeeDashboardShowsLeaveHistorySection – 
+Expecting value to be true but was false
+2026-02-26 15:38:12.947 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 15:38:12.947 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 15:38:12.949 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 15:38:14.087 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 15:38:15.337 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000 (title: 'Employee Leave Management System')
+2026-02-26 15:38:15.337 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-DSH-01: Employee dashboard shows 'Welcome' heading after login
+2026-02-26 15:38:36.953 [main] ERROR com.elsm.automation.utils.TestListener - [FAIL]  testEmployeeDashboardShowsWelcomeMessage – [Dashboard must load after employee login] 
+Expecting value to be true but was false
+2026-02-26 15:38:37.298 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 15:38:37.298 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 15:38:37.299 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 15:38:38.308 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 15:38:39.527 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000 (title: 'Employee Leave Management System')
+2026-02-26 15:38:39.527 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-DSH-08: Clicking Logout redirects to /login page
+2026-02-26 15:39:01.105 [main] ERROR com.elsm.automation.utils.TestListener - [FAIL]  testLogoutRedirectsToLogin – 
+Expecting value to be true but was false
+2026-02-26 15:39:02.970 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 15:39:02.971 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 15:39:02.972 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 15:39:04.133 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 15:39:06.092 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000 (title: 'Employee Leave Management System')
+2026-02-26 15:39:06.092 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-DSH-07: Manager dashboard does NOT show 'Apply for Leave' button
+2026-02-26 15:39:27.333 [main] ERROR com.elsm.automation.utils.TestListener - [FAIL]  testManagerDashboardDoesNotShowApplyLeaveButton – 
+Expecting value to be true but was false
+2026-02-26 15:39:27.659 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 15:39:27.660 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 15:39:27.661 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 15:39:28.702 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 15:39:30.665 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000 (title: 'Employee Leave Management System')
+2026-02-26 15:39:30.665 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-DSH-06: Manager dashboard shows Welcome message and Pending Leave Requests section
+2026-02-26 15:39:51.987 [main] ERROR com.elsm.automation.utils.TestListener - [FAIL]  testManagerDashboardShowsPendingSection – [Dashboard must load after manager login] 
+Expecting value to be true but was false
+2026-02-26 15:39:52.313 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 15:39:52.313 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 15:39:52.314 [main] INFO  com.elsm.automation.utils.TestListener - ======= TEST SUITE FINISHED: Dashboard UI Tests =======
+2026-02-26 15:39:52.349 [main] INFO  com.elsm.automation.utils.TestListener - ======= TEST SUITE STARTED: Leave Requests UI Tests =======
+2026-02-26 15:39:52.350 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 15:39:53.489 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 15:39:55.500 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000 (title: 'Employee Leave Management System')
+2026-02-26 15:39:55.500 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-LVR-03: Clicking 'Cancel' in the modal closes it without submitting
+2026-02-26 15:40:37.753 [main] ERROR com.elsm.automation.utils.TestListener - [FAIL]  testCancelModalDoesNotSubmit – Expected condition failed: waiting for visibility of element located by By.xpath: //*[contains(text(),'Your Leave Requests')] (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 145.0.7632.116, chrome: {chromedriverVersion: 145.0.7632.117 (de4e5d6e13b..., userDataDir: C:\Users\TADAKA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65507}, goog:processID: 6976, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65507/devtoo..., se:cdpVersion: 145.0.7632.116, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 04e32caedce9bc3ccd6412ffcbbcd95e
+2026-02-26 15:40:38.087 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 15:40:38.087 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 15:40:38.088 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 15:40:39.152 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 15:40:41.239 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000 (title: 'Employee Leave Management System')
+2026-02-26 15:40:41.239 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-LVR-01: Leave Requests page loads successfully after employee login
+2026-02-26 15:41:23.474 [main] ERROR com.elsm.automation.utils.TestListener - [FAIL]  testLeaveRequestsPageLoads – Expected condition failed: waiting for visibility of element located by By.xpath: //*[contains(text(),'Your Leave Requests')] (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 145.0.7632.116, chrome: {chromedriverVersion: 145.0.7632.117 (de4e5d6e13b..., userDataDir: C:\Users\TADAKA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64099}, goog:processID: 9072, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64099/devtoo..., se:cdpVersion: 145.0.7632.116, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c61e319eb2716ddcd48cd419af4a8640
+2026-02-26 15:41:23.839 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 15:41:23.840 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 15:41:23.840 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 15:41:25.013 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 15:41:27.073 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000 (title: 'Employee Leave Management System')
+2026-02-26 15:41:27.073 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-LVR-02: Clicking 'Apply for Leave' button opens the modal form
+2026-02-26 15:42:09.372 [main] ERROR com.elsm.automation.utils.TestListener - [FAIL]  testOpenModalShowsForm – Expected condition failed: waiting for visibility of element located by By.xpath: //*[contains(text(),'Your Leave Requests')] (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 145.0.7632.116, chrome: {chromedriverVersion: 145.0.7632.117 (de4e5d6e13b..., userDataDir: C:\Users\TADAKA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61229}, goog:processID: 18840, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61229/devtoo..., se:cdpVersion: 145.0.7632.116, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0c619170a978b2db133492759b8954b7
+2026-02-26 15:42:09.709 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 15:42:09.709 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 15:42:09.710 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 15:42:10.890 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 15:42:12.974 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000 (title: 'Employee Leave Management System')
+2026-02-26 15:42:12.974 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-LVR-08: Submitting the form with all blank fields shows a validation error
+2026-02-26 15:42:55.193 [main] ERROR com.elsm.automation.utils.TestListener - [FAIL]  testSubmitWithAllBlankFields_ShowsError – Expected condition failed: waiting for visibility of element located by By.xpath: //*[contains(text(),'Your Leave Requests')] (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 145.0.7632.116, chrome: {chromedriverVersion: 145.0.7632.117 (de4e5d6e13b..., userDataDir: C:\Users\TADAKA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57988}, goog:processID: 7288, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57988/devtoo..., se:cdpVersion: 145.0.7632.116, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ce6afdc1ed762865498674d77ea5cda6
+2026-02-26 15:42:55.543 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 15:42:55.544 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 15:42:55.545 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 15:42:56.772 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 15:42:58.760 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000 (title: 'Employee Leave Management System')
+2026-02-26 15:42:58.760 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-LVR-06: Submitting without selecting a leave type shows validation error
+2026-02-26 15:43:40.991 [main] ERROR com.elsm.automation.utils.TestListener - [FAIL]  testSubmitWithoutLeaveType_ShowsError – Expected condition failed: waiting for visibility of element located by By.xpath: //*[contains(text(),'Your Leave Requests')] (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 145.0.7632.116, chrome: {chromedriverVersion: 145.0.7632.117 (de4e5d6e13b..., userDataDir: C:\Users\TADAKA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63046}, goog:processID: 32728, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63046/devtoo..., se:cdpVersion: 145.0.7632.116, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 50d14eb79886ac8ef55ad93355c4012c
+2026-02-26 15:43:41.344 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 15:43:41.344 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 15:43:41.345 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 15:43:42.529 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 15:43:44.552 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000 (title: 'Employee Leave Management System')
+2026-02-26 15:43:44.552 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-LVR-07: Submitting without a reason/notes shows validation error
+2026-02-26 15:44:26.712 [main] ERROR com.elsm.automation.utils.TestListener - [FAIL]  testSubmitWithoutNotes_ShowsError – Expected condition failed: waiting for visibility of element located by By.xpath: //*[contains(text(),'Your Leave Requests')] (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 145.0.7632.116, chrome: {chromedriverVersion: 145.0.7632.117 (de4e5d6e13b..., userDataDir: C:\Users\TADAKA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51373}, goog:processID: 32468, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51373/devtoo..., se:cdpVersion: 145.0.7632.116, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 55868b44bc1ed0e800273d9255232194
+2026-02-26 15:44:27.023 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 15:44:27.023 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 15:44:27.025 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 15:44:28.247 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 15:44:30.239 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000 (title: 'Employee Leave Management System')
+2026-02-26 15:44:30.239 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-LVR-09: Unauthenticated access to /leave-requests redirects to /login
+2026-02-26 15:44:32.162 [main] INFO  com.elsm.automation.utils.TestListener - [PASS]  testUnauthenticatedAccessRedirects
+2026-02-26 15:44:32.388 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 15:44:32.388 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 15:44:32.389 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 15:44:33.505 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 15:44:34.842 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000 (title: 'Employee Leave Management System')
+2026-02-26 15:44:34.842 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-LVR-05: Submitting a valid VACATION leave request shows success alert
+2026-02-26 15:45:17.135 [main] ERROR com.elsm.automation.utils.TestListener - [FAIL]  testVacationLeaveRequestSubmissionShowsSuccess – Expected condition failed: waiting for visibility of element located by By.xpath: //*[contains(text(),'Your Leave Requests')] (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 145.0.7632.116, chrome: {chromedriverVersion: 145.0.7632.117 (de4e5d6e13b..., userDataDir: C:\Users\TADAKA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58678}, goog:processID: 15444, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58678/devtoo..., se:cdpVersion: 145.0.7632.116, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f4ecc148ca964b72cbaccdb0be4f5a35
+2026-02-26 15:45:17.452 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 15:45:17.452 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 15:45:17.454 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 15:45:18.626 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 15:45:20.641 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000 (title: 'Employee Leave Management System')
+2026-02-26 15:45:20.641 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-LVR-04: Submitting a valid SICK leave request shows success alert
+2026-02-26 15:46:02.887 [main] ERROR com.elsm.automation.utils.TestListener - [FAIL]  testValidLeaveRequestSubmissionShowsSuccess – Expected condition failed: waiting for visibility of element located by By.xpath: //*[contains(text(),'Your Leave Requests')] (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 145.0.7632.116, chrome: {chromedriverVersion: 145.0.7632.117 (de4e5d6e13b..., userDataDir: C:\Users\TADAKA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56348}, goog:processID: 18224, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56348/devtoo..., se:cdpVersion: 145.0.7632.116, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 30486f852aac50acacc97e885969ccaa
+2026-02-26 15:46:03.217 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 15:46:03.217 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 15:46:03.218 [main] INFO  com.elsm.automation.utils.TestListener - ======= TEST SUITE FINISHED: Leave Requests UI Tests =======
+2026-02-26 15:46:03.251 [main] INFO  com.elsm.automation.utils.TestListener - ======= TEST SUITE STARTED: Manager Dashboard UI Tests =======
+2026-02-26 15:46:03.253 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 15:46:04.482 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 15:46:06.489 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000 (title: 'Employee Leave Management System')
+2026-02-26 15:46:06.491 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-MGR-05: Employee cannot access /manager page (redirected to /)
+2026-02-26 15:46:29.692 [main] INFO  com.elsm.automation.utils.TestListener - [PASS]  testEmployeeCannotAccessManagerDashboard
+2026-02-26 15:46:30.024 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 15:46:30.024 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 15:46:30.025 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 15:46:31.126 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 15:46:33.169 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000 (title: 'Employee Leave Management System')
+2026-02-26 15:46:33.169 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-MGR-03: Manager can approve a pending leave request and sees success alert
+2026-02-26 15:47:15.434 [main] ERROR com.elsm.automation.utils.TestListener - [FAIL]  testManagerCanApprovePendingRequest – Expected condition failed: waiting for visibility of element located by By.xpath: //*[contains(text(),'Pending Leave Requests')] (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 145.0.7632.116, chrome: {chromedriverVersion: 145.0.7632.117 (de4e5d6e13b..., userDataDir: C:\Users\TADAKA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61749}, goog:processID: 21956, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61749/devtoo..., se:cdpVersion: 145.0.7632.116, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 064289ed8ced4dccdf408ad196dd0101
+2026-02-26 15:47:15.794 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 15:47:15.794 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 15:47:15.796 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 15:47:17.015 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 15:47:18.998 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000 (title: 'Employee Leave Management System')
+2026-02-26 15:47:18.998 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-MGR-04: Manager can reject a pending leave request and sees success alert
+2026-02-26 15:48:01.338 [main] ERROR com.elsm.automation.utils.TestListener - [FAIL]  testManagerCanRejectPendingRequest – Expected condition failed: waiting for visibility of element located by By.xpath: //*[contains(text(),'Pending Leave Requests')] (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 145.0.7632.116, chrome: {chromedriverVersion: 145.0.7632.117 (de4e5d6e13b..., userDataDir: C:\Users\TADAKA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59726}, goog:processID: 20760, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59726/devtoo..., se:cdpVersion: 145.0.7632.116, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8fea5631db2c9a9c036ba1a7ec134c01
+2026-02-26 15:48:01.688 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 15:48:01.689 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 15:48:01.690 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 15:48:02.918 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 15:48:04.906 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000 (title: 'Employee Leave Management System')
+2026-02-26 15:48:04.907 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-MGR-02: Manager dashboard heading reads 'Pending Leave Requests'
+2026-02-26 15:48:47.165 [main] ERROR com.elsm.automation.utils.TestListener - [FAIL]  testManagerDashboardHeading – Expected condition failed: waiting for visibility of element located by By.xpath: //*[contains(text(),'Pending Leave Requests')] (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 145.0.7632.116, chrome: {chromedriverVersion: 145.0.7632.117 (de4e5d6e13b..., userDataDir: C:\Users\TADAKA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57939}, goog:processID: 19656, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57939/devtoo..., se:cdpVersion: 145.0.7632.116, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 10a9b332c3c4bbf78c5d6c0ee3774207
+2026-02-26 15:48:47.491 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 15:48:47.491 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 15:48:47.492 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 15:48:48.585 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 15:48:50.648 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000 (title: 'Employee Leave Management System')
+2026-02-26 15:48:50.648 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-MGR-01: Manager can access the /manager dashboard page
+2026-02-26 15:49:32.955 [main] ERROR com.elsm.automation.utils.TestListener - [FAIL]  testManagerDashboardLoads – Expected condition failed: waiting for visibility of element located by By.xpath: //*[contains(text(),'Pending Leave Requests')] (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 145.0.7632.116, chrome: {chromedriverVersion: 145.0.7632.117 (de4e5d6e13b..., userDataDir: C:\Users\TADAKA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63872}, goog:processID: 24880, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63872/devtoo..., se:cdpVersion: 145.0.7632.116, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 4ca2ddc7aa719af288da84d54f6fb8b8
+2026-02-26 15:49:33.296 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 15:49:33.296 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 15:49:33.298 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 15:49:34.448 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 15:49:35.713 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000 (title: 'Employee Leave Management System')
+2026-02-26 15:49:35.715 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-MGR-06: Unauthenticated access to /manager redirects to /login
+2026-02-26 15:49:37.649 [main] INFO  com.elsm.automation.utils.TestListener - [PASS]  testUnauthenticatedAccessToManagerRedirects
+2026-02-26 15:49:37.851 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 15:49:37.851 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 15:49:37.852 [main] INFO  com.elsm.automation.utils.TestListener - ======= TEST SUITE FINISHED: Manager Dashboard UI Tests =======
+2026-02-26 15:49:37.886 [main] INFO  com.elsm.automation.utils.TestListener - ======= TEST SUITE STARTED: Admin Dashboard UI Tests =======
+2026-02-26 15:49:37.888 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 15:49:39.001 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 15:49:40.184 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000 (title: 'Employee Leave Management System')
+2026-02-26 15:49:40.185 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-ADM-01: Admin user can successfully access the Admin Dashboard
+2026-02-26 15:50:22.385 [main] ERROR com.elsm.automation.utils.TestListener - [FAIL]  testAdminCanAccessDashboard – Expected condition failed: waiting for visibility of element located by By.xpath: //h2[contains(text(),'Admin Dashboard')] (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 145.0.7632.116, chrome: {chromedriverVersion: 145.0.7632.117 (de4e5d6e13b..., userDataDir: C:\Users\TADAKA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64644}, goog:processID: 29844, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64644/devtoo..., se:cdpVersion: 145.0.7632.116, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ef5f89511f127e1ae4b8977b99f04270
+2026-02-26 15:50:22.732 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 15:50:22.733 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 15:50:22.735 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 15:50:23.929 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 15:50:25.977 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000 (title: 'Employee Leave Management System')
+2026-02-26 15:50:25.977 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-ADM-02: Admin Dashboard page heading is 'Admin Dashboard'
+2026-02-26 15:51:08.284 [main] ERROR com.elsm.automation.utils.TestListener - [FAIL]  testAdminDashboardHeading – Expected condition failed: waiting for visibility of element located by By.xpath: //h2[contains(text(),'Admin Dashboard')] (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 145.0.7632.116, chrome: {chromedriverVersion: 145.0.7632.117 (de4e5d6e13b..., userDataDir: C:\Users\TADAKA~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51946}, goog:processID: 17788, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51946/devtoo..., se:cdpVersion: 145.0.7632.116, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 12e900fa7b0250540c0b8ea840b3d90f
+2026-02-26 15:51:08.591 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 15:51:08.591 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 15:51:08.592 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 15:51:09.630 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 15:51:11.616 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000 (title: 'Employee Leave Management System')
+2026-02-26 15:51:11.616 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-ADM-03: Employee cannot access /admin page (redirected to /)
+2026-02-26 15:51:34.825 [main] INFO  com.elsm.automation.utils.TestListener - [PASS]  testEmployeeCannotAccessAdminDashboard
+2026-02-26 15:51:35.151 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 15:51:35.152 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 15:51:35.153 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 15:51:36.330 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 15:51:38.302 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000 (title: 'Employee Leave Management System')
+2026-02-26 15:51:38.302 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-ADM-04: Manager cannot access /admin page (redirected to /)
+2026-02-26 15:52:01.470 [main] INFO  com.elsm.automation.utils.TestListener - [PASS]  testManagerCannotAccessAdminDashboard
+2026-02-26 15:52:01.815 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 15:52:01.815 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 15:52:01.816 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 15:52:02.891 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 15:52:04.966 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000 (title: 'Employee Leave Management System')
+2026-02-26 15:52:04.973 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-ADM-05: Unauthenticated access to /admin redirects to /login
+2026-02-26 15:52:06.881 [main] INFO  com.elsm.automation.utils.TestListener - [PASS]  testUnauthenticatedAccessToAdminRedirects
+2026-02-26 15:52:07.138 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 15:52:07.138 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 15:52:07.139 [main] INFO  com.elsm.automation.config.DriverManager - Initialising chrome driver (headless=false)
+2026-02-26 15:52:08.274 [main] INFO  com.elsm.automation.config.DriverManager - chrome driver initialised successfully.
+2026-02-26 15:52:09.468 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser opened. Navigated to http://localhost:3000 (title: 'Employee Leave Management System')
+2026-02-26 15:52:09.468 [main] INFO  com.elsm.automation.utils.TestListener - [START] TC-UI-ADM-06: Unauthenticated access to /audit redirects to /login
+2026-02-26 15:52:11.387 [main] INFO  com.elsm.automation.utils.TestListener - [PASS]  testUnauthenticatedAccessToAuditRedirects
+2026-02-26 15:52:11.663 [main] INFO  com.elsm.automation.config.DriverManager - WebDriver quit successfully.
+2026-02-26 15:52:11.664 [main] INFO  com.elsm.automation.config.BaseUiTest - Browser closed.
+2026-02-26 15:52:11.665 [main] INFO  com.elsm.automation.utils.TestListener - ======= TEST SUITE FINISHED: Admin Dashboard UI Tests =======
+2026-02-26 15:52:11.718 [main] INFO  com.elsm.automation.config.BaseApiTest - Report flushed.

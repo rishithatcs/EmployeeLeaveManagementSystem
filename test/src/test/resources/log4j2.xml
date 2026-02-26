@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+
+  <Appenders>
+    <!-- Console appender -->
+    <Console name="ConsoleAppender" target="SYSTEM_OUT">
+      <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+    </Console>
+
+    <!-- Rolling file appender -->
+    <RollingFile name="FileAppender"
+                 fileName="target/test-reports/automation.log"
+                 filePattern="target/test-reports/automation-%d{yyyy-MM-dd}-%i.log.gz">
+      <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+      <Policies>
+        <TimeBasedTriggeringPolicy/>
+        <SizeBasedTriggeringPolicy size="10 MB"/>
+      </Policies>
+      <DefaultRolloverStrategy max="5"/>
+    </RollingFile>
+  </Appenders>
+
+  <Loggers>
+    <!-- REST Assured / Apache HTTP logging -->
+    <Logger name="io.restassured"         level="WARN" additivity="false">
+      <AppenderRef ref="ConsoleAppender"/>
+    </Logger>
+    <Logger name="org.apache.http"        level="WARN" additivity="false">
+      <AppenderRef ref="ConsoleAppender"/>
+    </Logger>
+
+    <!-- Selenium / WebDriver logging -->
+    <Logger name="org.openqa.selenium"    level="WARN" additivity="false">
+      <AppenderRef ref="ConsoleAppender"/>
+    </Logger>
+
+    <!-- Framework logging -->
+    <Logger name="com.elsm.automation"    level="INFO" additivity="false">
+      <AppenderRef ref="ConsoleAppender"/>
+      <AppenderRef ref="FileAppender"/>
+    </Logger>
+
+    <!-- Root logger -->
+    <Root level="WARN">
+      <AppenderRef ref="ConsoleAppender"/>
+    </Root>
+  </Loggers>
+
+</Configuration>
