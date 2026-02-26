@@ -1,0 +1,83 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<!--
+    ELMS Full Test Suite
+    Runs ALL API + UI tests.
+
+    IMPORTANT: Each test CLASS is mapped to its OWN <test> block.
+    This ensures that a @BeforeClass failure in one class does NOT cascade
+    to skip tests in other classes — a critical isolation boundary.
+
+    The @BeforeSuite in BaseApiTest is designed to NEVER throw, so it will
+    not cause any test-class to be skipped.
+-->
+<suite name="ELMS Full Test Suite" parallel="none" verbose="2">
+
+    <!-- ============================================================ -->
+    <!--  API Tests                                                    -->
+    <!-- ============================================================ -->
+
+    <test name="Auth API Tests">
+        <classes>
+            <class name="com.elsm.automation.api.tests.AuthApiTest"/>
+        </classes>
+    </test>
+
+    <test name="Employee API Tests">
+        <classes>
+            <class name="com.elsm.automation.api.tests.EmployeeApiTest"/>
+        </classes>
+    </test>
+
+    <test name="Manager API Tests">
+        <classes>
+            <class name="com.elsm.automation.api.tests.ManagerApiTest"/>
+        </classes>
+    </test>
+
+    <test name="Admin API Tests">
+        <classes>
+            <class name="com.elsm.automation.api.tests.AdminApiTest"/>
+        </classes>
+    </test>
+
+    <!-- ============================================================ -->
+    <!--  UI Tests                                                     -->
+    <!-- ============================================================ -->
+
+    <test name="Login UI Tests">
+        <classes>
+            <class name="com.elsm.automation.ui.tests.LoginUiTest"/>
+        </classes>
+    </test>
+
+    <test name="Register UI Tests">
+        <classes>
+            <class name="com.elsm.automation.ui.tests.RegisterUiTest"/>
+        </classes>
+    </test>
+
+    <test name="Dashboard UI Tests">
+        <classes>
+            <class name="com.elsm.automation.ui.tests.DashboardUiTest"/>
+        </classes>
+    </test>
+
+    <test name="Leave Requests UI Tests">
+        <classes>
+            <class name="com.elsm.automation.ui.tests.LeaveRequestsUiTest"/>
+        </classes>
+    </test>
+
+    <test name="Manager Dashboard UI Tests">
+        <classes>
+            <class name="com.elsm.automation.ui.tests.ManagerDashboardUiTest"/>
+        </classes>
+    </test>
+
+    <test name="Admin Dashboard UI Tests">
+        <classes>
+            <class name="com.elsm.automation.ui.tests.AdminDashboardUiTest"/>
+        </classes>
+    </test>
+
+</suite>

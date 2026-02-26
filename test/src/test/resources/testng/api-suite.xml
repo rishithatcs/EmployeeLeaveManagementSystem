@@ -1,0 +1,33 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<!--
+    ELMS API-Only Test Suite
+    Runs REST Assured tests only — no browser required.
+    Use: mvn test -P api-tests
+-->
+<suite name="ELMS API Test Suite" parallel="none" verbose="2">
+
+    <test name="Auth API Tests">
+        <classes>
+            <class name="com.elsm.automation.api.tests.AuthApiTest"/>
+        </classes>
+    </test>
+
+    <test name="Employee API Tests">
+        <classes>
+            <class name="com.elsm.automation.api.tests.EmployeeApiTest"/>
+        </classes>
+    </test>
+
+    <test name="Manager API Tests">
+        <classes>
+            <class name="com.elsm.automation.api.tests.ManagerApiTest"/>
+        </classes>
+    </test>
+
+    <test name="Admin API Tests">
+        <classes>
+            <class name="com.elsm.automation.api.tests.AdminApiTest"/>
+        </classes>
+    </test>
+
+</suite>
